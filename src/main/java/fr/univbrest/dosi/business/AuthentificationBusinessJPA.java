@@ -22,8 +22,13 @@ public class AuthentificationBusinessJPA implements AuthentificationBusiness {
 	}
 	
 	@Override
-	public Authentification VerificationRoleAdministrateur(String loginConnection,String motPasse){
-		return authentificationRepository.findByRole(loginConnection, motPasse);
+	public Authentification VerificationLoginConnection(String loginConnection,String motPasse,String role){
+		return authentificationRepository.findByLoginConnection(loginConnection, motPasse, role);
 	}
+	
+	public Authentification VerificationPseudoConnection(String pseudoConnection,String motPasse, String role){
+		return authentificationRepository.findByPseudoConnection(pseudoConnection, motPasse, role);
+	}
+
    
 }

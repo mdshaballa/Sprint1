@@ -26,9 +26,13 @@ public class AuthentificationController {
 		return authentificationBusinessJPA.recupererTousLesElementAuthentification();
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/verificationAdmin")
-	public Authentification VerificationRoleAdministrateur(@RequestParam String loginConnection,@RequestParam String motPasse){
-		return authentificationBusinessJPA.VerificationRoleAdministrateur(loginConnection, motPasse);
+	@RequestMapping(method=RequestMethod.POST, value="/verificationLoginConnection")
+	public Authentification VerificationLoginConnection(@RequestParam String loginConnection,@RequestParam String motPasse,@RequestParam String role){
+		return authentificationBusinessJPA.VerificationLoginConnection(loginConnection, motPasse, role);
 	}
-
+    
+	@RequestMapping(method=RequestMethod.POST, value="/verificationPseudoConnection")
+	public Authentification VerificationPseudoConnection(@RequestParam String pseudoConnection,@RequestParam String motPasse,@RequestParam String role){
+		return authentificationBusinessJPA.VerificationPseudoConnection(pseudoConnection, motPasse, role);
+	}
 }
