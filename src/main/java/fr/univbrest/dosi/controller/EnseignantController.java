@@ -21,11 +21,15 @@ public class EnseignantController {
 		this.enseignantBusinessJPA = enseignantBusinessJPA;
 	}
 	
+	@RequestMapping(method=RequestMethod.GET)
+	public List<Enseignant> recupererToutLesEnseignant(){
+		return enseignantBusinessJPA.recupererTousLesEnseignant();
+	}
+	
 	@RequestMapping(method=RequestMethod.GET,value="/{nom}")
 	public Enseignant recupererEnseignantParNom(@PathVariable String nom){
 		return enseignantBusinessJPA.recupererEnseignantParNom(nom);
-
 	}
 	
-
+	
 }
