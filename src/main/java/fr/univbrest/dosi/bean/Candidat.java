@@ -14,7 +14,7 @@ import java.util.Date;
  */
 
 @Entity
-@Table(name="CANDIDAT")
+@Table(name="candidat")
 @NamedQuery(name="Candidat.findAll", query="SELECT c FROM Candidat c")
 public class Candidat implements Serializable {
 	private static final long serialVersionUID = 1L;

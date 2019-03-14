@@ -23,6 +23,12 @@ public class ElementConstitutifPK implements Serializable {
 
 	public ElementConstitutifPK() {
 	}
+	
+	public ElementConstitutifPK(String codeUe) {
+		super();
+		this.codeUe = codeUe;
+	}
+
 	public String getCodeFormation() {
 		return this.codeFormation;
 	}

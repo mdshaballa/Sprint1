@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 	@NamedQuery(name="UniteEnseignement.findByEnseignant", query="SELECT u FROM UniteEnseignement u where u.enseignant.noEnseignant =?1")
 ,	@NamedQuery(name="UniteEnseignement.findByFormation", query="SELECT u FROM UniteEnseignement u where u.formation.codeFormation =?1")
 })
-@Table(name="UNITE_ENSEIGNEMENT")
+@Table(name="unite_enseignement")
 public class UniteEnseignement implements Serializable {
 	private static final long serialVersionUID = 1L;
 

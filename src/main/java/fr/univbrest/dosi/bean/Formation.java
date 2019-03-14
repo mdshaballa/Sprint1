@@ -11,8 +11,9 @@ import java.util.Date;
  * 
  */
 @Entity
-@Table(name="FORMATION")
-@NamedQuery(name="Formation.findAll", query="SELECT f FROM Formation f")
+@Table(name="formation")
+@NamedQueries({@NamedQuery(name="Formation.findAll", query="SELECT f FROM Formation f"),
+@NamedQuery(name="Formation.findByNomFormation", query="SELECT f FROM Formation f where f.nomFormation =?1")})
 public class Formation implements Serializable {
 	private static final long serialVersionUID = 1L;
 

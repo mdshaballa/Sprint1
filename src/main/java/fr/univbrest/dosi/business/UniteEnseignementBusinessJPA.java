@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.univbrest.dosi.bean.UniteEnseignement;
+import fr.univbrest.dosi.bean.UniteEnseignementPK;
 import fr.univbrest.dosi.repository.UniteEnseignementRepository;
 
 @Service
@@ -44,5 +45,18 @@ public class UniteEnseignementBusinessJPA implements UniteEnseignementBusiness{
 		return uniteEnseignementRepository.save(EU);
 	}
 	
+	@Override
+	public void supprimerUniteEnseignement(UniteEnseignement EU){
+		uniteEnseignementRepository.delete(EU);
+	}
 	
+	@Override
+	public void supprimerUniteEnseignementParUniteEnseignementPK(String codeUe, String codeFormation){
+		UniteEnseignementPK UE = new UniteEnseignementPK();
+		UE.setCodeUe(codeUe);
+		UE.setCodeFormation(codeFormation);
+		UniteEnseignement UL = uniteEnseignementRepository.findOne(UE);
+		uniteEnseignementRepository.delete(UL);
+		
+	}
 }

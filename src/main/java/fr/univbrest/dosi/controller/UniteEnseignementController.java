@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -45,6 +46,16 @@ public class UniteEnseignementController {
 	@RequestMapping(method=RequestMethod.POST, value="/creer")
 	public UniteEnseignement creerUniteEnseignement(@RequestBody UniteEnseignement EU){
 		return uniteEnseignementBusiness.creerUniteEnseignement(EU);
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE, value="/supprimer")
+	public void supprimerUniteEnseignement(@RequestBody UniteEnseignement EU){
+		uniteEnseignementBusiness.supprimerUniteEnseignement(EU);
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE, value="/supprimerPK")
+	public void supprimerUniteEnseignementParUniteEnseignementPK(@RequestParam String codeUe, @RequestParam String codeFormation){
+		uniteEnseignementBusiness.supprimerUniteEnseignementParUniteEnseignementPK(codeUe,codeFormation);
 	}
 	
 }

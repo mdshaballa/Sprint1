@@ -11,7 +11,7 @@ import java.util.Date;
  * 
  */
 @Entity
-@Table(name="PROMOTION")
+@Table(name="promotion")
 @NamedQuery(name="Promotion.findAll", query="SELECT p FROM Promotion p")
 public class Promotion implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -9,7 +9,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="ENSEIGNANT")
+@Table(name="enseignant")
 @NamedQuery(name="Enseignant.findAll", query="SELECT e FROM Enseignant e")
 public class Enseignant implements Serializable {
 	@Override

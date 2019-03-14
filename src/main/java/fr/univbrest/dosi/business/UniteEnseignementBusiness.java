@@ -10,4 +10,6 @@ public interface UniteEnseignementBusiness {
 	List<UniteEnseignement> rechercheUniteEnseignementParNoEnseignant(long noEnseignant);
 	List<UniteEnseignement> rechercheUniteEnseignementParCodeFormation(String codeFormation);
 	UniteEnseignement creerUniteEnseignement(UniteEnseignement EU);
+	void supprimerUniteEnseignement(UniteEnseignement EU);
+	void supprimerUniteEnseignementParUniteEnseignementPK(String CodeUe,String codeFormation);
 }
