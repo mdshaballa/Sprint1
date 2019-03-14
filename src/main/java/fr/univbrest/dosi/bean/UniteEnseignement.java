@@ -36,6 +36,12 @@ public class UniteEnseignement implements Serializable {
 	private BigDecimal nbhTp;
 
 	private String semestre;
+	
+	public UniteEnseignement(UniteEnseignementPK id, String semestre) {
+		super();
+		this.id = id;
+		this.semestre = semestre;
+	}
 
 	//uni-directional many-to-one association to Enseignant
 	@ManyToOne
@@ -48,6 +54,11 @@ public class UniteEnseignement implements Serializable {
 	private Formation formation;
 
 	public UniteEnseignement() {
+	}
+	
+	public UniteEnseignement(UniteEnseignementPK id) {
+		super();
+		this.id=id;
 	}
 
 	public UniteEnseignementPK getId() {

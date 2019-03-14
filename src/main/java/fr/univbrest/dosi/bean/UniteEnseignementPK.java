@@ -20,6 +20,13 @@ public class UniteEnseignementPK implements Serializable {
 
 	public UniteEnseignementPK() {
 	}
+	
+	public UniteEnseignementPK(String codeFormation, String codeUe) {
+		super();
+		this.codeFormation = codeFormation;
+		this.codeUe = codeUe;
+	}
+
 	public String getCodeFormation() {
 		return this.codeFormation;
 	}
