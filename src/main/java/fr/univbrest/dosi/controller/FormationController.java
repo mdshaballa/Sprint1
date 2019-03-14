@@ -3,16 +3,12 @@ package fr.univbrest.dosi.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import fr.univbrest.dosi.bean.ElementConstitutif;
-import fr.univbrest.dosi.bean.ElementConstitutifPK;
 import fr.univbrest.dosi.bean.Formation;
 import fr.univbrest.dosi.business.FormationBusiness;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:5500", maxAge = 3600)
 @RequestMapping("/formations")
 public class FormationController {
 	private FormationBusiness formationBusiness;

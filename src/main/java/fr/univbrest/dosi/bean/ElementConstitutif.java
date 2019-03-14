@@ -11,10 +11,15 @@ import java.math.BigDecimal;
  */
 @Entity
 @Table(name="element_constitutif")
-@NamedQuery(name="ElementConstitutif.findAll", query="SELECT e FROM ElementConstitutif e")
+
+@NamedQueries({
+@NamedQuery(name="ElementConstitutif.findAll", query="SELECT e FROM ElementConstitutif e"),
+@NamedQuery(name = "ElementConstitutif.findByUniteEnseignement", query = "SELECT e FROM ElementConstitutif e WHERE e.uniteEnseignement.id.codeUe = ?1")})
+
+
 public class ElementConstitutif implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+    
 	@EmbeddedId
 	private ElementConstitutifPK id;
 
@@ -46,7 +51,17 @@ public class ElementConstitutif implements Serializable {
 
 	public ElementConstitutif() {
 	}
-
+    
+	
+	public ElementConstitutif(ElementConstitutifPK id, String designation, BigDecimal nbhTd, BigDecimal nbhTp, BigDecimal nbhCm) {
+		this.id = id;
+		this.designation = designation;
+		this.nbhTd = nbhTd;
+		this.nbhTp = nbhTp;
+		this.nbhCm = nbhCm;
+	}
+	
+	
 	public ElementConstitutifPK getId() {
 		return this.id;
 	}

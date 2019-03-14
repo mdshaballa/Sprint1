@@ -12,10 +12,10 @@ public class ElementConstitutifPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="CODE_FORMATION", insertable=false, updatable=false)
+	@Column(name="CODE_FORMATION")
 	private String codeFormation;
 
-	@Column(name="CODE_UE", insertable=false, updatable=false)
+	@Column(name="CODE_UE")
 	private String codeUe;
 
 	@Column(name="CODE_EC")
@@ -24,11 +24,12 @@ public class ElementConstitutifPK implements Serializable {
 	public ElementConstitutifPK() {
 	}
 	
-	public ElementConstitutifPK(String codeUe) {
-		super();
+	public ElementConstitutifPK(String codeFormation, String codeUE, String codeEc ) {
+		this.codeFormation = codeFormation;
 		this.codeUe = codeUe;
-	}
-
+		this.codeEc = codeEc;
+	} 
+	
 	public String getCodeFormation() {
 		return this.codeFormation;
 	}
@@ -47,28 +48,42 @@ public class ElementConstitutifPK implements Serializable {
 	public void setCodeEc(String codeEc) {
 		this.codeEc = codeEc;
 	}
-
-	public boolean equals(Object other) {
-		if (this == other) {
+    
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
 			return true;
-		}
-		if (!(other instanceof ElementConstitutifPK)) {
+		if (obj == null)
 			return false;
-		}
-		ElementConstitutifPK castOther = (ElementConstitutifPK)other;
-		return 
-			this.codeFormation.equals(castOther.codeFormation)
-			&& this.codeUe.equals(castOther.codeUe)
-			&& this.codeEc.equals(castOther.codeEc);
+		if (getClass() != obj.getClass())
+			return false;
+		ElementConstitutifPK other = (ElementConstitutifPK) obj;
+		if (codeFormation == null) {
+			if (other.codeFormation != null)
+				return false;
+		} else if (!codeFormation.equals(other.codeFormation))
+			return false;
+		if (codeUe == null) {
+			if (other.codeUe != null)
+				return false;
+		} else if (!codeUe.equals(other.codeUe))
+			return false;
+		if (codeEc == null) {
+			if (other.codeEc != null)
+				return false;
+		} else if (!codeEc.equals(other.codeEc))
+			return false;
+		return true;
 	}
-
+	
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int hash = 17;
-		hash = hash * prime + this.codeFormation.hashCode();
-		hash = hash * prime + this.codeUe.hashCode();
-		hash = hash * prime + this.codeEc.hashCode();
 		
+		hash = prime * hash + ((codeFormation == null) ? 0 : codeFormation.hashCode());
+		hash = prime * hash + ((codeUe == null) ? 0 : codeUe.hashCode());
+		hash = prime * hash + ((codeEc == null) ? 0 : codeEc.hashCode());
 		return hash;
 	}
 }
