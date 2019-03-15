@@ -17,7 +17,6 @@ import fr.univbrest.dosi.business.ElementConstitutifBusiness;
 
 
 @RestController
-@CrossOrigin
 @RequestMapping("/elementsconstitutifs")
 public class ElementConstitutifController {
 	

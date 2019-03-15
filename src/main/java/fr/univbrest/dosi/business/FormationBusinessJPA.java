@@ -1,13 +1,10 @@
 package fr.univbrest.dosi.business;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.univbrest.dosi.bean.ElementConstitutif;
-import fr.univbrest.dosi.bean.ElementConstitutifPK;
 import fr.univbrest.dosi.bean.Formation;
 import fr.univbrest.dosi.repository.FormationRepository;
 
@@ -50,14 +47,7 @@ public class FormationBusinessJPA implements FormationBusiness {
 		formationRepo.delete(codeFormation);	
 	}
 	
-	
-	/*
-	@Override
-	public List<Formation> rechercheFormationParNom(String nomFormation) {
-		List<Formation> listeDesFormations = (List<Formation>) formationRepo.findAll();
-		return listeDesFormations.stream().filter(t -> t.getNomFormation().equals(nomFormation)).collect(Collectors.toList());
-		}
-*/
+
 	
 
 }
