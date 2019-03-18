@@ -54,7 +54,7 @@ public class UniteEnseignementController {
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/supprimerPK")
-	public void supprimerUniteEnseignementParUniteEnseignementPK(@RequestParam String codeUe, @RequestParam String codeFormation){
+	public void supprimerUniteEnseignementParUniteEnseignementPK(@RequestBody String codeUe, @RequestBody String codeFormation){
 		uniteEnseignementBusiness.supprimerUniteEnseignementParUniteEnseignementPK(codeUe,codeFormation);
 	}
 	

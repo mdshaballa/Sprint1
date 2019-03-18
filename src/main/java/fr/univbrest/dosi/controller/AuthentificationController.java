@@ -2,6 +2,7 @@ package fr.univbrest.dosi.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,12 +28,12 @@ public class AuthentificationController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/verificationLoginConnection")
-	public Authentification VerificationLoginConnection(@RequestParam String loginConnection,@RequestParam String motPasse,@RequestParam String role){
-		return authentificationBusinessJPA.VerificationLoginConnection(loginConnection, motPasse, role);
+	public Authentification VerificationLoginConnection(@RequestBody Authentification auth){
+		return authentificationBusinessJPA.VerificationLoginConnection(auth.getLoginConnection(), auth.getMotPasse(), auth.getRole());
 	}
     
 	@RequestMapping(method=RequestMethod.POST, value="/verificationPseudoConnection")
-	public Authentification VerificationPseudoConnection(@RequestParam String pseudoConnection,@RequestParam String motPasse,@RequestParam String role){
-		return authentificationBusinessJPA.VerificationPseudoConnection(pseudoConnection, motPasse, role);
+	public Authentification VerificationPseudoConnection(@RequestBody Authentification auth){
+		return authentificationBusinessJPA.VerificationPseudoConnection(auth.getLoginConnection(), auth.getMotPasse(), auth.getRole());
 	}
 }
