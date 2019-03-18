@@ -11,4 +11,5 @@ public interface ElementConstitutifBusiness {
 	public void supprimerElementConstitutifParid(ElementConstitutifPK id);
 	public List<ElementConstitutif> recupererTousLesElementConstitutifs();
 	public ElementConstitutif recupererElementConstitutifParId(ElementConstitutifPK id);
+	public List<ElementConstitutif> recupererElementConstitutifsParUniteEnseignement(String codeUe);
 }

@@ -145,6 +145,12 @@ class ElementConstitutifRepositoryList implements ElementConstitutifRepository{
 		return null;
 	}
 
+	@Override
+	public List<ElementConstitutif> findByUniteEnseignement(String codeUe) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 }

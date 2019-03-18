@@ -47,4 +47,9 @@ public class ElementConstitutifBusinessJPA implements ElementConstitutifBusiness
 		return ElementConstitutifRepos.findOne(id);	
 	}
 
+	@Override
+	public List<ElementConstitutif> recupererElementConstitutifsParUniteEnseignement(String codeUe) {
+		return ElementConstitutifRepos.findByUniteEnseignement(codeUe);
+	}
+
 }
