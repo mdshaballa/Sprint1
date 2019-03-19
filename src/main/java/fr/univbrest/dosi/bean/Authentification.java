@@ -16,8 +16,8 @@ import javax.persistence.Table;
 @Table(name="authentification")
 @NamedQueries({
 @NamedQuery(name="Authentification.findAll", query="SELECT a FROM Authentification a"),
-@NamedQuery(name="Authentification.findByLoginConnection", query="SELECT a FROM Authentification a where a.loginConnection =?1 and a.motPasse=?2 and a.role=?3"),
-@NamedQuery(name="Authentification.findByPseudoConnection", query="SELECT a FROM Authentification a where a.pseudoConnection =?1 and a.motPasse=?2 and a.role=?3")
+@NamedQuery(name="Authentification.findByLoginConnection", query="SELECT a FROM Authentification a where a.loginConnection =?1 and a.motPasse=?2"),
+@NamedQuery(name="Authentification.findByPseudoConnection", query="SELECT a FROM Authentification a where a.pseudoConnection =?1 and a.motPasse=?2")
 })
 public class Authentification implements Serializable {
 

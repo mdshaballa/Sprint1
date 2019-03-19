@@ -8,7 +8,7 @@ import fr.univbrest.dosi.bean.Authentification;
 @Repository
 public interface AuthentificationRepository extends CrudRepository<Authentification,Integer>{
 	
-	Authentification findByLoginConnection(String loginConnection, String motPasse, String role);
-	Authentification findByPseudoConnection(String pseudoConnection, String motPasse, String role);
+	Authentification findByLoginConnection(String loginConnection, String motPasse);
+	Authentification findByPseudoConnection(String pseudoConnection, String motPasse);
 	
 }

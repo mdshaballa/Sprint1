@@ -29,11 +29,11 @@ public class AuthentificationController {
 	
 	@RequestMapping(method=RequestMethod.POST, value="/verificationLoginConnection")
 	public Authentification VerificationLoginConnection(@RequestBody Authentification auth){
-		return authentificationBusinessJPA.VerificationLoginConnection(auth.getLoginConnection(), auth.getMotPasse(), auth.getRole());
+		return authentificationBusinessJPA.VerificationLoginConnection(auth.getLoginConnection(), auth.getMotPasse());
 	}
     
 	@RequestMapping(method=RequestMethod.POST, value="/verificationPseudoConnection")
 	public Authentification VerificationPseudoConnection(@RequestBody Authentification auth){
-		return authentificationBusinessJPA.VerificationPseudoConnection(auth.getLoginConnection(), auth.getMotPasse(), auth.getRole());
+		return authentificationBusinessJPA.VerificationPseudoConnection(auth.getPseudoConnection(), auth.getMotPasse());
 	}
 }
