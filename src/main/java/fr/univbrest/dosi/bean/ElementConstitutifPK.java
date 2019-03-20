@@ -12,10 +12,10 @@ public class ElementConstitutifPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="CODE_FORMATION")
+	@Column(name="CODE_FORMATION", insertable=false, updatable=false)
 	private String codeFormation;
 
-	@Column(name="CODE_UE")
+	@Column(name="CODE_UE", insertable=false, updatable=false)
 	private String codeUe;
 
 	@Column(name="CODE_EC")
@@ -26,7 +26,7 @@ public class ElementConstitutifPK implements Serializable {
 	
 	public ElementConstitutifPK(String codeFormation, String codeUE, String codeEc ) {
 		this.codeFormation = codeFormation;
-		this.codeUe = codeUe;
+		this.codeUe = codeUE;
 		this.codeEc = codeEc;
 	} 
 	

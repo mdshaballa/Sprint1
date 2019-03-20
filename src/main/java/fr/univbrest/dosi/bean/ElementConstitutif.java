@@ -10,7 +10,7 @@ import java.math.BigDecimal;
  * 
  */
 @Entity
-@Table(name="element_constitutif")
+@Table(name="ELEMENT_CONSTITUTIF")
 
 @NamedQueries({
 @NamedQuery(name="ElementConstitutif.findAll", query="SELECT e FROM ElementConstitutif e"),
@@ -53,8 +53,9 @@ public class ElementConstitutif implements Serializable {
 	}
     
 	
-	public ElementConstitutif(ElementConstitutifPK id, String designation, BigDecimal nbhTd, BigDecimal nbhTp, BigDecimal nbhCm) {
+	public ElementConstitutif(ElementConstitutifPK id, String description, String designation, BigDecimal nbhTd, BigDecimal nbhTp, BigDecimal nbhCm) {
 		this.id = id;
+		this.description =description;
 		this.designation = designation;
 		this.nbhTd = nbhTd;
 		this.nbhTp = nbhTp;
