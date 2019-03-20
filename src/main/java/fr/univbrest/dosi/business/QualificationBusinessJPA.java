@@ -40,6 +40,14 @@ public class QualificationBusinessJPA implements QualificationBusiness{
 	public void supprimerQualificatif(Qualificatif qu){
 		qualificatifRepository.delete(qu);
 	}
+
+
+	@Override
+	public void supprimerQualificatifParId(int idQualificatif) {
+		qualificatifRepository.delete(idQualificatif);
+		
+	}
+	
 	
 }
 

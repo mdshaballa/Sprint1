@@ -47,6 +47,11 @@ public class QualificationController {
 		qualificationBusiness.supprimerQualificatif(qu);
 	}
 	
+	@RequestMapping(method=RequestMethod.DELETE, value="/supprimerParid")
+	public void supprimerQualificatifParId(@RequestBody  Qualificatif qu){
+		qualificationBusiness.supprimerQualificatifParId(qu.getIdQualificatif());
+	}
+	
 }
 	
 
