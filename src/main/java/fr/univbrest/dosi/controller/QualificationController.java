@@ -37,13 +37,13 @@ public class QualificationController {
 
 	
 	@RequestMapping(method=RequestMethod.POST, value="/creerQualificatif")
-	public Qualificatif creerUniteEnseignement(@RequestBody Qualificatif qu){
+	public Qualificatif creerQualificatif(@RequestBody Qualificatif qu){
 		return qualificationBusiness.creerQualificatif(qu);
 	}
 	
 
 	@RequestMapping(method=RequestMethod.DELETE, value="/supprimer")
-	public void supprimerUniteEnseignement(@RequestBody Qualificatif  qu){
+	public void supprimerQualificatif(@RequestBody Qualificatif  qu){
 		qualificationBusiness.supprimerQualificatif(qu);
 	}
 	
