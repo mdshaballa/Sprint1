@@ -47,6 +47,12 @@ public class QualificationBusinessJPA implements QualificationBusiness{
 		qualificatifRepository.delete(idQualificatif);
 		
 	}
+
+
+	@Override
+	public Qualificatif modifierQualificatif(Qualificatif qu) {
+		return qualificatifRepository.save(qu);
+	}
 	
 	
 }

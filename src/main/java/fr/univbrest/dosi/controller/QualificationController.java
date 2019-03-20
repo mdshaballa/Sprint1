@@ -52,6 +52,11 @@ public class QualificationController {
 		qualificationBusiness.supprimerQualificatifParId(qu.getIdQualificatif());
 	}
 	
+	@RequestMapping(method=RequestMethod.PUT, value="/modifierQualificatif")
+	public Qualificatif modifierQualificatif(@RequestBody Qualificatif qu){
+		return qualificationBusiness.modifierQualificatif(qu);
+	}
+	
 }
 	
 
