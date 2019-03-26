@@ -21,7 +21,7 @@ public class FormationBusinessJPA implements FormationBusiness {
 	
 	@Override
 	public List<Formation> recupererTousLesFormation() {
-		return (List<Formation> ) formationRepo.findAll();
+		return formationRepo.findAllByOrderByNomFormationAsc();
 	}
 
 	@Override

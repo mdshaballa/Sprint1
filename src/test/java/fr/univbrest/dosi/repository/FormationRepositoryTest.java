@@ -125,4 +125,12 @@ class FormationRepositoryList implements FormationRepository{
 	}
 
 	
+
+	@Override
+	public List<Formation> findAllByOrderByNomFormationAsc() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }

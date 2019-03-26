@@ -11,6 +11,6 @@ import fr.univbrest.dosi.bean.Formation;
 public interface FormationRepository extends CrudRepository<Formation, String> {
 
 	List<Formation> findByNomFormation(String nomFormation);
-	
+	List<Formation> findAllByOrderByNomFormationAsc();
 	
 }
