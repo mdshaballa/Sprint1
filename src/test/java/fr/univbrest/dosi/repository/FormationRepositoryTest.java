@@ -127,7 +127,7 @@ class FormationRepositoryList implements FormationRepository{
 	
 
 	@Override
-	public List<Formation> findAllByOrderByNomFormationAsc() {
+	public List<Formation> findAllByOrderByNomFormationDesc() {
 		// TODO Auto-generated method stub
 		return null;
 	}
