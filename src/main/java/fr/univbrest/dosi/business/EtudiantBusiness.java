@@ -8,4 +8,5 @@ import fr.univbrest.dosi.bean.Etudiant;
 public interface EtudiantBusiness {
 
 	public List<Etudiant> recupererTousLesEtudiant();
+	public Etudiant recupererEtudiantParPK(String noEtudiant);
 }

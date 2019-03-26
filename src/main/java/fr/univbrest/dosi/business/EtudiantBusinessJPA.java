@@ -21,6 +21,11 @@ public class EtudiantBusinessJPA implements EtudiantBusiness{
 	public List<Etudiant> recupererTousLesEtudiant() {
 		return (List<Etudiant>) etudiantRepository.findAll();
 	}
+
+	@Override
+	public Etudiant recupererEtudiantParPK(String noEtudiant) {
+		return etudiantRepository.findOne(noEtudiant);
+	}
 	
 	
 }
