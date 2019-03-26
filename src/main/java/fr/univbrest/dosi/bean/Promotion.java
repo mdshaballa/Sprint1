@@ -15,86 +15,6 @@ import java.util.Date;
 @NamedQuery(name="Promotion.findAll", query="SELECT p FROM Promotion p")
 public class Promotion implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((commentaire == null) ? 0 : commentaire.hashCode());
-		result = prime * result + ((dateRentree == null) ? 0 : dateRentree.hashCode());
-		result = prime * result + ((dateReponseLalp == null) ? 0 : dateReponseLalp.hashCode());
-		result = prime * result + ((dateReponseLp == null) ? 0 : dateReponseLp.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((lieuRentree == null) ? 0 : lieuRentree.hashCode());
-		result = prime * result + ((nbMaxEtudiant == null) ? 0 : nbMaxEtudiant.hashCode());
-		result = prime * result + ((processusStage == null) ? 0 : processusStage.hashCode());
-		result = prime * result + ((siglePromotion == null) ? 0 : siglePromotion.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Promotion other = (Promotion) obj;
-		if (commentaire == null) {
-			if (other.commentaire != null)
-				return false;
-		} else if (!commentaire.equals(other.commentaire))
-			return false;
-		if (dateRentree == null) {
-			if (other.dateRentree != null)
-				return false;
-		} else if (!dateRentree.equals(other.dateRentree))
-			return false;
-		if (dateReponseLalp == null) {
-			if (other.dateReponseLalp != null)
-				return false;
-		} else if (!dateReponseLalp.equals(other.dateReponseLalp))
-			return false;
-		if (dateReponseLp == null) {
-			if (other.dateReponseLp != null)
-				return false;
-		} else if (!dateReponseLp.equals(other.dateReponseLp))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (lieuRentree == null) {
-			if (other.lieuRentree != null)
-				return false;
-		} else if (!lieuRentree.equals(other.lieuRentree))
-			return false;
-		if (nbMaxEtudiant == null) {
-			if (other.nbMaxEtudiant != null)
-				return false;
-		} else if (!nbMaxEtudiant.equals(other.nbMaxEtudiant))
-			return false;
-		if (processusStage == null) {
-			if (other.processusStage != null)
-				return false;
-		} else if (!processusStage.equals(other.processusStage))
-			return false;
-		if (siglePromotion == null) {
-			if (other.siglePromotion != null)
-				return false;
-		} else if (!siglePromotion.equals(other.siglePromotion))
-			return false;
-		return true;
-	}
-
-	public Promotion(PromotionPK id, String lieuRentree, String siglePromotion) {
-		this.id = id;
-		this.lieuRentree = lieuRentree;
-		this.siglePromotion = siglePromotion;
-	}
 
 	@EmbeddedId
 	private PromotionPK id;
@@ -137,7 +57,13 @@ public class Promotion implements Serializable {
 
 	public Promotion() {
 	}
-
+	
+	public Promotion(PromotionPK id, String lieuRentree, String siglePromotion) {
+		this.id = id;
+		this.lieuRentree = lieuRentree;
+		this.siglePromotion = siglePromotion;
+	}
+	
 	public PromotionPK getId() {
 		return this.id;
 	}
@@ -224,6 +150,79 @@ public class Promotion implements Serializable {
 
 	public void setFormation(Formation formation) {
 		this.formation = formation;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((commentaire == null) ? 0 : commentaire.hashCode());
+		result = prime * result + ((dateRentree == null) ? 0 : dateRentree.hashCode());
+		result = prime * result + ((dateReponseLalp == null) ? 0 : dateReponseLalp.hashCode());
+		result = prime * result + ((dateReponseLp == null) ? 0 : dateReponseLp.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((lieuRentree == null) ? 0 : lieuRentree.hashCode());
+		result = prime * result + ((nbMaxEtudiant == null) ? 0 : nbMaxEtudiant.hashCode());
+		result = prime * result + ((processusStage == null) ? 0 : processusStage.hashCode());
+		result = prime * result + ((siglePromotion == null) ? 0 : siglePromotion.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Promotion other = (Promotion) obj;
+		if (commentaire == null) {
+			if (other.commentaire != null)
+				return false;
+		} else if (!commentaire.equals(other.commentaire))
+			return false;
+		if (dateRentree == null) {
+			if (other.dateRentree != null)
+				return false;
+		} else if (!dateRentree.equals(other.dateRentree))
+			return false;
+		if (dateReponseLalp == null) {
+			if (other.dateReponseLalp != null)
+				return false;
+		} else if (!dateReponseLalp.equals(other.dateReponseLalp))
+			return false;
+		if (dateReponseLp == null) {
+			if (other.dateReponseLp != null)
+				return false;
+		} else if (!dateReponseLp.equals(other.dateReponseLp))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (lieuRentree == null) {
+			if (other.lieuRentree != null)
+				return false;
+		} else if (!lieuRentree.equals(other.lieuRentree))
+			return false;
+		if (nbMaxEtudiant == null) {
+			if (other.nbMaxEtudiant != null)
+				return false;
+		} else if (!nbMaxEtudiant.equals(other.nbMaxEtudiant))
+			return false;
+		if (processusStage == null) {
+			if (other.processusStage != null)
+				return false;
+		} else if (!processusStage.equals(other.processusStage))
+			return false;
+		if (siglePromotion == null) {
+			if (other.siglePromotion != null)
+				return false;
+		} else if (!siglePromotion.equals(other.siglePromotion))
+			return false;
+		return true;
 	}
 
 }
