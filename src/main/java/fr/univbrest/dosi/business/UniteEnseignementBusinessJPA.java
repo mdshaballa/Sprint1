@@ -59,4 +59,9 @@ public class UniteEnseignementBusinessJPA implements UniteEnseignementBusiness{
 		uniteEnseignementRepository.delete(UL);
 		
 	}
+
+	@Override
+	public UniteEnseignement rechercheUniteEnseignementParPK(UniteEnseignementPK upk) {
+		return uniteEnseignementRepository.findOne(upk);
+	}
 }

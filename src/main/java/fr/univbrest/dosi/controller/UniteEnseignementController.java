@@ -6,11 +6,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-
 import fr.univbrest.dosi.bean.UniteEnseignement;
+import fr.univbrest.dosi.bean.UniteEnseignementPK;
 import fr.univbrest.dosi.business.UniteEnseignementBusiness;
 
 @RestController
@@ -41,6 +39,13 @@ public class UniteEnseignementController {
 	@RequestMapping(method=RequestMethod.GET, value="/Formation/{codeFormation}")
 	public List<UniteEnseignement> rechercheUniteEnseignementParCodeFormation(@PathVariable("codeFormation") String codeFormation){
 		return uniteEnseignementBusiness.rechercheUniteEnseignementParCodeFormation(codeFormation);
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/{codeFormation}/{codeUe}")
+	public UniteEnseignement rechercheUniteEnseignementParPK(@PathVariable("codeFormation") String codeFormation,@PathVariable("codeUe") String codeUe){
+		UniteEnseignementPK upk = new UniteEnseignementPK(codeFormation,codeUe);
+		return uniteEnseignementBusiness.rechercheUniteEnseignementParPK(upk);
+
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/creer")
