@@ -42,27 +42,15 @@ public class QualificationController {
 	
 
 	@RequestMapping(method=RequestMethod.DELETE, value="/supprimer")
-	public String supprimerQualificatif(@RequestBody Qualificatif  qu){
-		String erreur;
-		try{
+	public void supprimerQualificatif(@RequestBody Qualificatif  qu){
+		
 			qualificationBusiness.supprimerQualificatif(qu);
-			erreur = "bien";
-		}catch(Exception e){
-			erreur = "erreur";
-		}
-		return erreur;
+			
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/supprimerParid")
-	public String supprimerQualificatifParId(@RequestBody  Qualificatif qu){
-		String erreur;
-		try{
+	public void supprimerQualificatifParId(@RequestBody  Qualificatif qu){
 			qualificationBusiness.supprimerQualificatifParId(qu.getIdQualificatif());
-			erreur = "bien";
-		}catch(Exception e){
-			erreur = "erreur";
-		}
-		return erreur;
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/modifierQualificatif")

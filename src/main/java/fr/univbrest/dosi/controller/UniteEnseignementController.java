@@ -53,28 +53,13 @@ public class UniteEnseignementController {
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/supprimer")
-	public String supprimerUniteEnseignement(@RequestBody UniteEnseignement EU){
-		String erreur;
-		try{
+	public void supprimerUniteEnseignement(@RequestBody UniteEnseignement EU){
 			uniteEnseignementBusiness.supprimerUniteEnseignement(EU);
-			erreur = "bien";
-		}catch(Exception e){
-			erreur = "erreur";
-		}
-		return erreur;
-		
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/supprimerPK")
-	public String supprimerUniteEnseignementParUniteEnseignementPK(@RequestBody UniteEnseignementPK pk){
-		String erreur;
-		try{
+	public void supprimerUniteEnseignementParUniteEnseignementPK(@RequestBody UniteEnseignementPK pk){
 			uniteEnseignementBusiness.supprimerUniteEnseignementParUniteEnseignementPK(pk.getCodeUe(),pk.getCodeFormation());
-			erreur = "bien";
-		}catch(Exception e){
-			erreur = "erreur";
-		}
-		return erreur;
 		}
 	
 }

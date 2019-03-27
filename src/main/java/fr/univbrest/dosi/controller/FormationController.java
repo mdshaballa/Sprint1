@@ -40,15 +40,9 @@ public class FormationController {
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE)
-	public String supprimerFormation(@RequestBody Formation formation) {
-		String erreur;
-		try{
+	public void supprimerFormation(@RequestBody Formation formation) {
 			formationBusiness.supprimerFormation(formation);
-			erreur = "bien";
-		}catch(Exception e){
-			erreur = "erreur";
-		}
-		return erreur;
+			
 	}
 	
 }
