@@ -44,7 +44,6 @@ public class UniteEnseignementController {
 	public UniteEnseignement rechercheUniteEnseignementParPK(@PathVariable("codeFormation") String codeFormation,@PathVariable("codeUe") String codeUe){
 		UniteEnseignementPK upk = new UniteEnseignementPK(codeFormation,codeUe);
 		return uniteEnseignementBusiness.rechercheUniteEnseignementParPK(upk);
-
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/creer")

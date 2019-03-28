@@ -11,5 +11,6 @@
 		<class>fr.univbrest.dosi.bean.UniteEnseignementPK</class>
 		<class>fr.univbrest.dosi.bean.Authentification</class>
 		<class>fr.univbrest.dosi.bean.Qualificatif</class>
+		<class>fr.univbrest.dosi.bean.Evaluation</class>
 	</persistence-unit>
 </persistence>
