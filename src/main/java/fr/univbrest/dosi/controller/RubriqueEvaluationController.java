@@ -38,13 +38,11 @@ public class RubriqueEvaluationController {
 	@RequestMapping(method = RequestMethod.POST)
 	public void creerRubEval(@RequestBody RubriqueEvaluation rubEvalAcreer) {
 		rubriqueEvaluationBusiness.creerRubriqueEvaluation(rubEvalAcreer); 
-		
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT)
 	public void modifierRubEval(@RequestBody RubriqueEvaluation rubEvalAmodifier) {
 		rubriqueEvaluationBusiness.modifierRubriqueEvaluation(rubEvalAmodifier); 
-		
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE, value="/Supp/{idRubEval}")

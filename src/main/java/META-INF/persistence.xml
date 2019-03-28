@@ -12,5 +12,6 @@
 		<class>fr.univbrest.dosi.bean.Authentification</class>
 		<class>fr.univbrest.dosi.bean.Qualificatif</class>
 		<class>fr.univbrest.dosi.bean.Evaluation</class>
+		<class>fr.univbrest.dosi.bean.Question</class>
 	</persistence-unit>
 </persistence>
