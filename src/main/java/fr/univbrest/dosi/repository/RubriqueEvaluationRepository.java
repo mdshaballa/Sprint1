@@ -10,6 +10,6 @@ import fr.univbrest.dosi.business.RubriqueOnly;
 
 public interface RubriqueEvaluationRepository extends CrudRepository<RubriqueEvaluation, Integer> {
 	
-	List<RubriqueOnly> findByEvaluationIdEvaluation(int idevaluation);
+	List<RubriqueOnly> findByEvaluation(Long idevaluation);
 
 }
