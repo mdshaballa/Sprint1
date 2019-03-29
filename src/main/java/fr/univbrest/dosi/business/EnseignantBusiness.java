@@ -9,4 +9,5 @@ public interface EnseignantBusiness {
 
 	List <Enseignant> recupererTousLesEnseignant();
 	Enseignant recupererEnseignantParNom(String nom);
+	Enseignant recupererEnseignantParId(Long id);
 }

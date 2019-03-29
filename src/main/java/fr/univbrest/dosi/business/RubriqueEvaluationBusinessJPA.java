@@ -47,5 +47,10 @@ public class RubriqueEvaluationBusinessJPA implements RubriqueEvaluationBusiness
 			repos.delete(idRubEval);
 				 
 	}
+
+	@Override
+	public List<RubriqueOnly> recupererRubriqueEvaluationParRubrique(int idRubrique) {
+		return repos.findByRubrique(idRubrique);
+	}
 }
 

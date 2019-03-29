@@ -11,5 +11,5 @@ import fr.univbrest.dosi.business.RubriqueOnly;
 public interface RubriqueEvaluationRepository extends CrudRepository<RubriqueEvaluation, Integer> {
 	
 	List<RubriqueOnly> findByEvaluation(Long idevaluation);
-
+	List<RubriqueOnly> findByRubrique(int idRubrique);
 }

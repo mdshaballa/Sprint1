@@ -35,6 +35,11 @@ public class RubriqueEvaluationController {
 		return rubriqueEvaluationBusiness.recupererRubriqueEvaluation(idEvaluation);
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, value="/Rubrique/{idRubrique}")
+	public List<RubriqueOnly> recupererRubriqueEvalParRubrique(@PathVariable int idRubrique) {
+		return rubriqueEvaluationBusiness.recupererRubriqueEvaluationParRubrique(idRubrique);
+	}
+	
 	@RequestMapping(method = RequestMethod.POST)
 	public void creerRubEval(@RequestBody RubriqueEvaluation rubEvalAcreer) {
 		rubriqueEvaluationBusiness.creerRubriqueEvaluation(rubEvalAcreer); 

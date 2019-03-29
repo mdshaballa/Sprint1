@@ -31,5 +31,9 @@ public class EnseignantController {
 		return enseignantBusinessJPA.recupererEnseignantParNom(nom);
 	}
 	
+	@RequestMapping(method=RequestMethod.GET,value="/id/{id}")
+	public Enseignant recupererEnseignantParId(@PathVariable Long id){
+		return enseignantBusinessJPA.recupererEnseignantParId(id);
+	}
 	
 }

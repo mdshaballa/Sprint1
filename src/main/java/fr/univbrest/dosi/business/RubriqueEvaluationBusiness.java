@@ -11,5 +11,5 @@ public interface RubriqueEvaluationBusiness {
 	void creerRubriqueEvaluation(RubriqueEvaluation rubEvalACreer);
 	void modifierRubriqueEvaluation(RubriqueEvaluation rubEvalAModifier);
 	void supprimerRubriqueEvaluation(int idRubEval);
-
+	List<RubriqueOnly> recupererRubriqueEvaluationParRubrique(int idRubrique);
 }

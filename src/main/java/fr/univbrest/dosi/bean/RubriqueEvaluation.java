@@ -9,7 +9,8 @@ import javax.persistence.*;
 @Table(name="rubrique_evaluation")
 @NamedQueries({
 @NamedQuery(name="RubriqueEvaluation.findAll", query="SELECT r FROM RubriqueEvaluation r"),
-@NamedQuery(name="RubriqueEvaluation.findByEvaluation", query="SELECT r FROM RubriqueEvaluation r where r.evaluation.idEvaluation = ?1")
+@NamedQuery(name="RubriqueEvaluation.findByEvaluation", query="SELECT r FROM RubriqueEvaluation r where r.evaluation.idEvaluation = ?1"),
+@NamedQuery(name="RubriqueEvaluation.findByRubrique", query="SELECT r FROM RubriqueEvaluation r where r.rubrique.idRubrique = ?1")
 })
 public class RubriqueEvaluation implements Serializable {
 	private static final long serialVersionUID = 1L;

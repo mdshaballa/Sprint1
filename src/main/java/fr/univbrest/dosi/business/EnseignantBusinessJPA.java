@@ -28,4 +28,9 @@ public class EnseignantBusinessJPA implements EnseignantBusiness{
 		return enseignantRepository.findByNom(nom);
 	}
 
+	@Override
+	public Enseignant recupererEnseignantParId(Long id) {
+		return enseignantRepository.findOne(id);
+	}
+
 }
