@@ -10,7 +10,10 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="question_evaluation")
-@NamedQuery(name="QuestionEvaluation.findAll", query="SELECT q FROM QuestionEvaluation q")
+@NamedQueries({
+@NamedQuery(name="QuestionEvaluation.findAll", query="SELECT q FROM QuestionEvaluation q"),
+@NamedQuery(name="QuestionEvaluation.findByRubriqueEvaluation", query="SELECT q FROM QuestionEvaluation q WHERE q.rubriqueEvaluation.idRubriqueEvaluation= ?1")
+})
 public class QuestionEvaluation implements Serializable {
 	private static final long serialVersionUID = 1L;
 
