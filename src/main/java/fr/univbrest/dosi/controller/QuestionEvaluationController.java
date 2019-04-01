@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.univbrest.dosi.bean.Question;
 import fr.univbrest.dosi.bean.QuestionEvaluation;
-import fr.univbrest.dosi.bean.Rubrique;
 import fr.univbrest.dosi.business.QuestionEvaluationBusiness;
 
 @RestController
