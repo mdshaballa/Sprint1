@@ -3,8 +3,6 @@ package fr.univbrest.dosi.bean;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
-
 @Entity
 @Table(name="rubrique_evaluation")
 @NamedQueries({
@@ -12,10 +10,12 @@ import javax.persistence.*;
 @NamedQuery(name="RubriqueEvaluation.findByEvaluation", query="SELECT r FROM RubriqueEvaluation r where r.evaluation.idEvaluation = ?1"),
 @NamedQuery(name="RubriqueEvaluation.findByRubrique", query="SELECT r FROM RubriqueEvaluation r where r.rubrique.idRubrique = ?1")
 })
+
 public class RubriqueEvaluation implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_RUBRIQUE_EVALUATION")
 	private int idRubriqueEvaluation;
 
@@ -79,6 +79,5 @@ public class RubriqueEvaluation implements Serializable {
 }
 
  interface RubriqueOnly {
-
 	  Rubrique getRubrique();
 	}

@@ -22,8 +22,8 @@ public class Qualificatif implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	/*@GeneratedValue(strategy = GenerationType.AUTO)*/
-	@Column(name="ID_QUALIFICATIF", updatable = false, nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID_QUALIFICATIF")
 	private int idQualificatif;
 
 	public Qualificatif() {

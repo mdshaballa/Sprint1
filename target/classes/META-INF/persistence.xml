@@ -13,5 +13,6 @@
 		<class>fr.univbrest.dosi.bean.Qualificatif</class>
 		<class>fr.univbrest.dosi.bean.Evaluation</class>
 		<class>fr.univbrest.dosi.bean.Question</class>
+		<class>fr.univbrest.dosi.bean.Rubrique</class>
 	</persistence-unit>
 </persistence>

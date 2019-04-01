@@ -15,7 +15,7 @@
 		private static final long serialVersionUID = 1L;
 
 		@Id
-		
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name="ID_RUBRIQUE")
 		private Integer idRubrique;
 
