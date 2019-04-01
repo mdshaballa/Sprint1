@@ -17,20 +17,21 @@ public class Question implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_QUESTION")
 	private int idQuestion;
-    
-	@ManyToOne
-	@JoinColumn(name="ID_QUALIFICATIF")
-	private Qualificatif qualificatif;
 
 	@Column(name="INTITULE")
 	private String intitule;
     
+	@Column(name="TYPE")
+	private String type;
+	
+	@ManyToOne
+	@JoinColumn(name="ID_QUALIFICATIF")
+	private Qualificatif qualificatif;
+	
 	@ManyToOne
 	@JoinColumn(name="NO_ENSEIGNANT")
 	private Enseignant enseignant;
 
-	@Column(name="TYPE")
-	private String type;
 
 	public Question() {
 		super();

@@ -21,7 +21,7 @@ public class RubriqueEvaluation implements Serializable {
 
 	private String designation;
 
-	private byte ordre;
+	private Integer ordre;
 
 	//uni-directional many-to-one association to Evaluation
 	@ManyToOne
@@ -52,11 +52,11 @@ public class RubriqueEvaluation implements Serializable {
 		this.designation = designation;
 	}
 
-	public byte getOrdre() {
+	public Integer getOrdre() {
 		return this.ordre;
 	}
 
-	public void setOrdre(byte ordre) {
+	public void setOrdre(Integer ordre) {
 		this.ordre = ordre;
 	}
 
