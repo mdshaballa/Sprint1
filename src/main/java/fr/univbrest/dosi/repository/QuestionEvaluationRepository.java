@@ -8,5 +8,5 @@ import fr.univbrest.dosi.bean.QuestionEvaluation;
 
 public interface QuestionEvaluationRepository extends CrudRepository<QuestionEvaluation, Integer>{
     
-	List<QuestionEvaluation> findByRubriqueEvaluation(int idRubriqueEvaluation);
+	List<QuestionEvaluation> findByRubriqueEvaluation(int idRubrique);
 }

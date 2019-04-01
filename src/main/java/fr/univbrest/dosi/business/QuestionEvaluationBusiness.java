@@ -11,5 +11,5 @@ public interface QuestionEvaluationBusiness {
 	void supprimerQuestionEvaluation(QuestionEvaluation questionevaluation);
 	void supprimerQuestionEvaluationParid(int idQuestionEvaluation);
 	QuestionEvaluation rechercheQuestionEvaluationParID(int idQuestionEvaluation);
-	List<QuestionEvaluation> recupererParRubriqueEvaluation(int idRubriqueEvaluation);
+	List<QuestionEvaluation> recupererParRubriqueEvaluation(int idRubrique);
 }

@@ -50,8 +50,8 @@ public class QuestionEvaluationBusinessJPA implements QuestionEvaluationBusiness
 	}
 
 	@Override
-	public List<QuestionEvaluation> recupererParRubriqueEvaluation(int idRubriqueEvaluation) {
-		return QuestionEvaluationRepo.findByRubriqueEvaluation(idRubriqueEvaluation);
+	public List<QuestionEvaluation> recupererParRubriqueEvaluation(int idRubrique) {
+		return QuestionEvaluationRepo.findByRubriqueEvaluation(idRubrique);
 	}
 
 }

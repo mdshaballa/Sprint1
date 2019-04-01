@@ -17,7 +17,7 @@
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name="ID_RUBRIQUE")
-		private Integer idRubrique;
+		private int idRubrique;
 
 		private String designation;
 

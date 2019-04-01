@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.univbrest.dosi.bean.Question;
 import fr.univbrest.dosi.bean.QuestionEvaluation;
 import fr.univbrest.dosi.bean.Rubrique;
 import fr.univbrest.dosi.business.QuestionEvaluationBusiness;
@@ -53,12 +54,12 @@ private QuestionEvaluationBusiness questionevaluationbusiness;
 		return questionevaluationbusiness.rechercheQuestionEvaluationParID(idQuestionEvaluation);
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/RubriqueEvaluation/{idRubriqueEvaluation}")
-	public List<Rubrique> recupererParRubriqueEvaluation(@PathVariable int idRubriqueEvaluation) {
-		List<QuestionEvaluation> q = questionevaluationbusiness.recupererParRubriqueEvaluation(idRubriqueEvaluation);
-		ArrayList<Rubrique> a = new ArrayList<Rubrique>();
+	@RequestMapping(method=RequestMethod.GET, value="/RubriqueEvaluation/{idRubrique}")
+	public List<Question> recupererParRubriqueEvaluation(@PathVariable int idRubrique) {
+		List<QuestionEvaluation> q = questionevaluationbusiness.recupererParRubriqueEvaluation(idRubrique);
+		ArrayList<Question> a = new ArrayList<Question>();
 		for(QuestionEvaluation e : q){
-			a.add(e.getRubriqueEvaluation().getRubrique());
+			a.add(e.getQuestion());
 		} 
 		return a; 
 	}
