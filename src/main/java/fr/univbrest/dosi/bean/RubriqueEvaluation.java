@@ -77,7 +77,3 @@ public class RubriqueEvaluation implements Serializable {
 	}
 
 }
-
- interface RubriqueOnly {
-	  Rubrique getRubrique();
-	}
