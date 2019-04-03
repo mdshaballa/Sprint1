@@ -43,10 +43,10 @@ public class RubriqueEvaluationController {
 		return a;
 	}*/
 	
-	/*@RequestMapping(method = RequestMethod.GET, value="/Rubrique/{idRubrique}")
-	public List<RubriqueEvaluation> recupererRubriqueEvalParRubrique(@PathVariable int idRubrique) {
-		return  rubriqueEvaluationBusiness.recupererRubriqueEvaluationParRubrique(idRubrique);
-	}*/
+	@RequestMapping(method = RequestMethod.GET, value="/Rubrique/{idRubriqueEval}")
+	public RubriqueEvaluation recupererRubriqueEvalParIdRubriqueEval(@PathVariable int idRubriqueEval) {
+		return  rubriqueEvaluationBusiness.recupererRubriqueEvalParIdRubriqueEval(idRubriqueEval);
+	}
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public void creerRubEval(@RequestBody RubriqueEvaluation rubEvalAcreer) {

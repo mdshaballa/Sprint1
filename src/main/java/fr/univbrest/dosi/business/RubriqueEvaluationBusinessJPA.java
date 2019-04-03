@@ -52,5 +52,10 @@ public class RubriqueEvaluationBusinessJPA implements RubriqueEvaluationBusiness
 	public List<RubriqueEvaluation> recupererRubriqueEvaluationParRubrique(int idRubrique) {
 		return repos.findByRubrique(idRubrique);
 	}
+
+	@Override
+	public RubriqueEvaluation recupererRubriqueEvalParIdRubriqueEval(int idRubriqueEval) {
+		return repos.findOne(idRubriqueEval);
+	}
 }
 
