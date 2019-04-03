@@ -40,7 +40,7 @@ public class RubriqueEvaluationController {
 		return a;
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value="/Rubrique/{idRubrique}")
+	/*@RequestMapping(method = RequestMethod.GET, value="/Rubrique/{idRubrique}")
 	public List<Rubrique> recupererRubriqueEvalParRubrique(@PathVariable int idRubrique) {
 		List<RubriqueEvaluation> L =  rubriqueEvaluationBusiness.recupererRubriqueEvaluationParRubrique(idRubrique);
 		ArrayList<Rubrique> a = new ArrayList<Rubrique>();
@@ -48,6 +48,11 @@ public class RubriqueEvaluationController {
 			a.add(e.getRubrique());
 		} 
 		return a;
+	}*/
+	
+	@RequestMapping(method = RequestMethod.GET, value="/Rubrique/{idRubrique}")
+	public List<RubriqueEvaluation> recupererRubriqueEvalParRubrique(@PathVariable int idRubrique) {
+		return  rubriqueEvaluationBusiness.recupererRubriqueEvaluationParRubrique(idRubrique);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)

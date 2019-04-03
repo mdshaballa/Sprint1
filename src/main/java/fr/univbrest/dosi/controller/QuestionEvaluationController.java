@@ -54,13 +54,8 @@ private QuestionEvaluationBusiness questionevaluationbusiness;
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/RubriqueEvaluation/{idRubrique}")
-	public List<Question> recupererParRubriqueEvaluation(@PathVariable int idRubrique) {
-		List<QuestionEvaluation> q = questionevaluationbusiness.recupererParRubriqueEvaluation(idRubrique);
-		ArrayList<Question> a = new ArrayList<Question>();
-		for(QuestionEvaluation e : q){
-			a.add(e.getQuestion());
-		} 
-		return a; 
+	public List<QuestionEvaluation> recupererParRubriqueEvaluation(@PathVariable int idRubrique) {
+		return questionevaluationbusiness.recupererParRubriqueEvaluation(idRubrique); 
 	}
 	
 }
