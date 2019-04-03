@@ -15,5 +15,6 @@
 		<class>fr.univbrest.dosi.bean.Question</class>
 		<class>fr.univbrest.dosi.bean.Rubrique</class>
 		<class>fr.univbrest.dosi.bean.RubriqueEvaluation</class>
+		<class>fr.univbrest.dosi.bean.QuestionEvaluation</class>
 	</persistence-unit>
 </persistence>
