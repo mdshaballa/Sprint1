@@ -31,20 +31,24 @@ public class RubriqueEvaluationController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value="/{idEvaluation}")
-	public List<Rubrique> recupererRubriqueEval(@PathVariable Long idEvaluation) {
-		List<RubriqueEvaluation> L =  rubriqueEvaluationBusiness.recupererRubriqueEvaluation(idEvaluation);
+	public List<RubriqueEvaluation> recupererRubriqueEval(@PathVariable Long idEvaluation) {
+		return  rubriqueEvaluationBusiness.recupererRubriqueEvaluation(idEvaluation);
+	}
+	
+	/*@RequestMapping(method = RequestMethod.GET, value="/Rubrique/{idRubrique}")
+	public List<Rubrique> recupererRubriqueEvalParRubrique(@PathVariable int idRubrique) {
+		List<RubriqueEvaluation> L =  rubriqueEvaluationBusiness.recupererRubriqueEvaluationParRubrique(idRubrique);
 		ArrayList<Rubrique> a = new ArrayList<Rubrique>();
 		for(RubriqueEvaluation e : L){
 			a.add(e.getRubrique());
 		} 
 		return a;
-	}
+	}*/
 	
-	
-	@RequestMapping(method = RequestMethod.GET, value="/Rubrique/{idRubrique}")
+	/*@RequestMapping(method = RequestMethod.GET, value="/Rubrique/{idRubrique}")
 	public List<RubriqueEvaluation> recupererRubriqueEvalParRubrique(@PathVariable int idRubrique) {
 		return  rubriqueEvaluationBusiness.recupererRubriqueEvaluationParRubrique(idRubrique);
-	}
+	}*/
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public void creerRubEval(@RequestBody RubriqueEvaluation rubEvalAcreer) {
