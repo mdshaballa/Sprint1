@@ -1,0 +1,142 @@
+package com.fr.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class BDD {
+	Connection cnx;
+
+	public BDD() {
+
+		String url = "jdbc:oracle:thin:@oracle-SPCFTN.val.s.arkea.com:1521:spcftn";
+		String user = "spcontrolftn";
+		String passwd = "spcontrolftn";
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			cnx = DriverManager.getConnection(url, user, passwd);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void insertInBDD(int id, String fn, String ln) {
+
+		String query = " insert into users (id,first_name, last_name)"
+				+ " values (?, ?, ?)";
+		try {
+			PreparedStatement preparedStmt = this.cnx.prepareStatement(query);
+			preparedStmt.setInt(1, id);
+			preparedStmt.setString(2, fn);
+			preparedStmt.setString(3, ln);
+			preparedStmt.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void deletParId(int id) {
+		String sql = "DELETE FROM USERS WHERE id = " + id + " ";
+		try {
+			PreparedStatement pstmt = this.cnx.prepareStatement(sql);
+			pstmt.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void deletAll() {
+		String sql = "DELETE FROM USERS ";
+		try {
+			Statement stmt = this.cnx.createStatement();
+			stmt.execute(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void deletTable() {
+		String sql = "DROP TABLE USERS ";
+		try {
+			Statement stmt = this.cnx.createStatement();
+			stmt.execute(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void creatTable() {
+		String sql = "create table users ( " + "id NUMBER(3) not null,"
+				+ "first_name varchar2(30) not null,"
+				+ "last_name varchar2(30) not null,"
+				+ "constraint PK_users primary key (id) " + ")";
+		try {
+			Statement stmt = this.cnx.createStatement();
+			stmt.execute(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void update(int id, String fn, String ln) {
+		String sql = "update users set first_name = ?, last_name = ? where id = ?";
+		try {
+			PreparedStatement pstmt = this.cnx.prepareStatement(sql);
+			pstmt.setString(1, fn);
+			pstmt.setString(2, ln);
+			pstmt.setInt(3, id);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void selectAllData() {
+		String sql = "SELECT * FROM USERS ";
+		PreparedStatement pstmt;
+		try {
+			pstmt = this.cnx.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				System.out.println(rs.getInt("id") + " | "
+						+ rs.getString("first_name") + " | "
+						+ rs.getString("last_name"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void selectData(int id) {
+		String sql = "SELECT id, first_name, last_name FROM USERS WHERE id = ?";
+		PreparedStatement pstmt;
+		try {
+			pstmt = this.cnx.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				System.out.println(rs.getInt("id") + " | "
+						+ rs.getString("first_name") + " | "
+						+ rs.getString("last_name"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void endCnx() {
+		try {
+			this.cnx.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
