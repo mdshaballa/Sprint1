@@ -22,7 +22,6 @@ public class BDD {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public void insertInBDD(int id, String fn, String ln) {
@@ -126,6 +125,29 @@ public class BDD {
 						+ rs.getString("first_name") + " | "
 						+ rs.getString("last_name"));
 			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void createView() {
+		String sql = "CREATE VIEW user_view "
+				+ "AS SELECT USERS.ID, USERS.FIRST_NAME, USERS.LAST_NAME"
+				+ " FROM USERS";
+		try {
+			PreparedStatement pstmt = this.cnx.prepareStatement(sql);
+			pstmt.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void dropView() {
+		String sql = "DROP VIEW USER_VIEW";
+		PreparedStatement pstmt;
+		try {
+			pstmt = this.cnx.prepareStatement(sql);
+			pstmt.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
