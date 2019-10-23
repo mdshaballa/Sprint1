@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 
 public class BDD {
 	Connection cnx;
@@ -26,19 +25,14 @@ public class BDD {
 	}
 
 	public void insertInBDD(int id, String fn, String ln) {
+		String s = "14/12/1995 8:20:50";
 		String query = "insert into users (id,first_name, last_name, date_naissance)"
-				+ " values (?, ?, ?, ?)";
-		String d = "2006-12-12";
-		java.util.Date date;
-		
+				+ " values (?, ?, ?, TO_DATE('"+s+"', 'dd/mm/yyyy hh:mi:ss'))";
 		try {
-			date = new SimpleDateFormat("yyyy-MM-dd").parse(d);
-			java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 			PreparedStatement preparedStmt = this.cnx.prepareStatement(query);
 			preparedStmt.setInt(1, id);
 			preparedStmt.setString(2, fn);
 			preparedStmt.setString(3, ln);
-			preparedStmt.setDate(4, sqlDate);
 			preparedStmt.execute();
 			
 		} catch (Exception e) {
@@ -67,8 +61,8 @@ public class BDD {
 		}
 	}
 
-	public void deletTable() {
-		String sql = "DROP TABLE USERS ";
+	public void deletTable(String tab) {
+		String sql = "DROP TABLE "+ tab;
 		try {
 			Statement stmt = this.cnx.createStatement();
 			stmt.execute(sql);
@@ -154,6 +148,16 @@ public class BDD {
 		PreparedStatement pstmt;
 		try {
 			pstmt = this.cnx.prepareStatement(sql);
+			pstmt.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void createTab2(){
+		String sql = "Create table couser as select * from users";
+		try {
+			PreparedStatement pstmt = this.cnx.prepareStatement(sql);
 			pstmt.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
